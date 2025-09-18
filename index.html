@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Схема LIFO с ЛЧ и DC</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <h1>Аппаратная схема LIFO</h1>
+
+  <div class="scheme">
+    <!-- ЛЧ -->
+    <div class="lc" id="lc">ЛЧ<br>0</div>
+    <div class="arrow-line right"></div>
+
+    <!-- DC -->
+    <div class="dc" id="dc">DC<br>-</div>
+    <!-- 7 стрелок от DC к Stack -->
+    <div class="arrow-line dc-stack-1"></div>
+    <div class="arrow-line dc-stack-2"></div>
+    <div class="arrow-line dc-stack-3"></div>
+    <div class="arrow-line dc-stack-4"></div>
+    <div class="arrow-line dc-stack-5"></div>
+    <div class="arrow-line dc-stack-6"></div>
+    <div class="arrow-line dc-stack-7"></div>
+    <!-- конец стрелок -->
+
+    <!-- Стек -->
+    <div class="stack" id="stack"></div>
+  </div>
+
+  <div class="controls">
+    <button class="push" onclick="push()">ЗП (Записать)</button>
+    <button class="pop" onclick="pop()">ЗЧ (Считать)</button>
+    <button class="shift" onclick="shift()">СКД (Сдвиг)</button>
+  </div>
+
+  <div class="indicators">
+    <div id="empty" class="indicator">Empty</div>
+    <div id="full" class="indicator">Full</div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
