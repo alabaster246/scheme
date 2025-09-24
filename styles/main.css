@@ -42,21 +42,19 @@ h1 {
   justify-content: flex-start;
   align-items: center;
 }
-
-.lc::before {
-  content: "ЛЧ";
+.lc::before, .dc::before, .stack::before {
   font-size: 16px;
-  color: #2196F3;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.lc::before {
+  content: "ЛЧ";
+  color: #2196F3;
 }
 
 .dc::before {
   content: "Дешифратор (DC)";
-  font-size: 16px;
   color: #4CAF50;
-  margin-bottom: 8px;
-  font-weight: bold;
 }
 
 .stack {
@@ -73,10 +71,7 @@ h1 {
 
 .stack::before {
   content: "Стек";
-  font-size: 16px;
   color: #f44336;
-  margin-bottom: 8px;
-  font-weight: bold;
   display: block;
   text-align: center;
 }
@@ -165,21 +160,22 @@ h1 {
 }
 
 /* Стрелки */
+
 .arrow {
   position: absolute;
   font-size: 24px;
   font-weight: bold;
 }
-
 .arrow-line.right {
   position: absolute;
-  top: 27px; /* скорректируйте по месту */
-  left: 113px; /* скорректируйте по месту */
-  width: 40px; /* длина стрелки */
-  height: 0;
-  border-top: 2px solid #000000;
+top: 27px; /* скорректируйте по месту */
+left: 113px; /* скорректируйте по месту */
+width: 40px; /* длина стрелки */
+height: 0;
+border-top: 2px solid #000000;
 }
-.arrow-line.right::after {
+
+.arrow-line.right::after, .arrow-line.dc-stack-1::after, .arrow-line.dc-stack-2::after, .arrow-line.dc-stack-3::after, .arrow-line.dc-stack-4::after, .arrow-line.dc-stack-5::after, .arrow-line.dc-stack-6::after, .arrow-line.dc-stack-7::after {
   content: '';
   position: absolute;
   right: 0;
@@ -190,164 +186,51 @@ h1 {
   padding: 8px;
   transform: rotate(-45deg);
 }
-.arrow-line.active::after {
-  border-color: #43a047 !important;
- }
+
+.arrow-line.dc-stack-1, .arrow-line.dc-stack-2, .arrow-line.dc-stack-3, .arrow-line.dc-stack-4, .arrow-line.dc-stack-5, .arrow-line.dc-stack-6, .arrow-line.dc-stack-7 {
+  position: absolute;
+  left: 264px;
+  height: 0;
+  width: 40px;
+  border-top: 2px solid #000000;
+}
 
 .arrow-line.dc-stack-1 {
-  position: absolute;
   top: 30px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
 }
-.arrow-line.dc-stack-1::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
-}
-
+  
 .arrow-line.dc-stack-2 {
-  position: absolute;
   top: 80px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-2::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
 }
 
 .arrow-line.dc-stack-3 {
-  position: absolute;
   top: 130px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-3::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
 }
 
 .arrow-line.dc-stack-4 {
-  position: absolute;
   top: 180px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-4::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
 }
 
 .arrow-line.dc-stack-5 {
-  position: absolute;
   top: 230px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-5::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
 }
 
 .arrow-line.dc-stack-6 {
-  position: absolute;
   top: 280px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-6::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
 }
 
 .arrow-line.dc-stack-7 {
-  position: absolute;
   top: 330px;
-  left: 264px;
-  width: 40px;
-  height: 0;
-  border-top: 2px solid #000000;
-}
-.arrow-line.dc-stack-7::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  border: solid #333;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(-45deg);
-}
-
-.arrow-line.active {
-  border-top: 2px solid green !important;
-}
-.arrow-line.active::after {
-  border-color: green !important;
-}
-
-.arrow-line {
-  transition: border-top-color 0.3s;
 }
 
 .arrow-line.active {
   border-top: 2px solid #43a047 !important;
 }
+
 .arrow-line.active::after {
   border-color: #43a047 !important;
+ }
+
+.arrow-line {
+  transition: border-top-color 0.3s;
 }
